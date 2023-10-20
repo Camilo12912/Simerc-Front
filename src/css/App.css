@@ -1,0 +1,540 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* nav css */
+
+.navegacion {
+  background-color: #1f2126;
+  position: fixed;
+  width: 100%;
+  max-height: 90px;
+  transition:  0.32s ease-in-out;
+}
+
+.navegacion .navbar-toggler{
+  background-color: #fff; /* Color blanco para las tres rayas del icono del menú */
+}
+
+.navegacion .contNav{
+  padding: 0;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+.navegacion .navbar-brand img{
+  height: 4rem;
+  width: 12rem;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navegacion .contLink{
+  margin-left: 80px;
+}
+
+
+.navegacion .navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0px 30px;
+  transition: all 0.3s ease 0s;
+}
+
+.navegacion .navbar-brand,
+.navegacion .navbar-nav .nav-link:hover {
+  transform: scale(1.1);
+}
+
+/* banner css */
+
+.banner {
+  margin-top: 0;
+  padding: 0 0 100px 0;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.correo {
+  margin-top: 0;
+  padding: 0 0 100px 0;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner h1 {
+  color: #282727;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 900;
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+}
+
+
+.banner button {
+  color: #ffffff;
+  background-color: #d34040;
+  font-weight: 200;
+  font-size: 15px;
+  padding: 10px 30%;
+  border-radius: 10px;
+  border: none;
+  margin-top: 30px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+  max-width: 600px;
+}
+
+.banner button:hover {
+  transform: scale(1.1);
+  color: #D60201;
+  background-color: #FFFF;
+}
+
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.banner button:hover svg {
+  margin-left: 20px;
+}
+
+.banner img {
+  animation: updown 3s linear infinite;
+}
+
+/* proyectoCard */
+
+.card{
+  margin: 0px 10px;
+  height: 100px;
+}
+
+.card p{
+  margin: 0;
+}
+
+.card .Card.Img{
+  height: 40px;
+  width: 30px;
+}
+
+
+
+.botones-container button {
+  margin: 2px; 
+  padding: 0;
+}
+
+/* proyectos */
+
+.portafolio {
+  margin: 50px 150px;
+}
+
+.portafolio h1 {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 50px;
+  display: block;
+}
+
+/* divisor */
+
+.content-card {
+  background-color: #3F354B !important;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  align-items: center;
+}
+
+.content-card .card-body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.content-card h1 {
+  color: #ffffff;
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.img_div {
+  padding: 10px;
+}
+
+.img_div img {
+  width: 190px;
+  height: 130px;
+  margin-right: 30px;
+}
+
+.text_div {
+  padding: 10px;
+}
+
+/* 2do divisor */
+
+.custom-card {
+  background-color: #D60201 !important;
+  margin: 0;
+  padding: 50px 100px;
+  border-radius: 0 !important;
+}
+
+.custom-card p {
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 2.1px;
+  opacity: 1;
+}
+
+/* projectSection */
+
+.bannerProject {
+  margin-top: 0;
+  padding: 70px 100px 20px 100px;
+  background-position: top center;
+}
+
+.bannerProject .logo_user svg{
+  height: 160px;
+  width: 160px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+  color: #D60201;
+}
+
+.bannerProject h5{
+  color: #3f354b;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+
+.bannerProject h1 {
+  color: #D60201;
+  font-size: 70px;
+  font-weight: 750;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 500px !important;
+}
+
+
+
+.bannerProject button {
+  color: #fff;
+  background-color: #D60201;
+  font-weight: 200;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 100px;
+  border: none;
+  margin-top: 50px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.bannerProject button:hover {
+  transform: scale(1.1);
+  color: #D60201;
+  background-color: #FFFF;
+}
+
+.bannerProject button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.bannerProject button:hover svg {
+  margin-left: 20px;
+}
+
+.ProyectoImage{
+  margin: 0;
+  padding: 0;
+}
+
+.ProyectoImage img {
+  height: 700px;
+  max-width: 100%;
+}
+
+.bannerProject.text-right .row {
+  flex-direction: row-reverse;
+}
+
+.bannerProject.text-right .logo_user {
+  margin-right: 30px;
+  text-align: right;
+}
+
+.bannerProject.text-right .logo_user svg {
+  margin-right: 30px;
+  text-align: right;
+}
+
+.bannerProject .text-right {
+  text-align: right; 
+}
+
+/* footer */
+
+.footer {
+  background-color: #1f2126;
+  color: #fff;
+  padding: 30px 0 0;
+}
+
+.footer-logo img {
+  width: 190px;
+  margin-left: 50px;
+}
+
+.footer-contact, .footer-service {
+  color: #000000;
+}
+
+.footer-contact h3, .footer-service h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-contact p, .footer-service p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-div {
+  padding: 2px;
+  color: #fff;
+  background-color: #3F354B;
+  margin: 0;
+  border-radius: 0;
+}
+
+.footer .footer-div .card-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-div p:first-child {
+  margin-right: 40px;
+}
+
+.section-testimonio{
+  display: flex !important;
+  padding: 20px 100px;
+  margin: 0;
+  border: none !important;
+  background-color: #ff00004f !important;
+}
+
+.testimonioCard {
+  padding: 0;
+  margin: 0;
+  height: 100px;
+  width: 500px;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.imagen-retrato{
+  height: 130px;
+  width: 130px;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.nombre-testimonio {
+  font-size: 20px !important;
+}
+
+.texto-testimonio{
+  font-size: 10px !important;
+}
+
+/* login */
+
+.loginCard {
+  height: 500px !important;
+  width: 900px;
+  display: block !important; /* Hacer que el botón sea un bloque para ocupar el ancho completo */
+  margin: 100px auto !important;
+}
+
+.loginCard h1 {
+  margin-top: 20px;
+}
+
+.imagen-login{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  position: block;
+}
+
+.SignIn-Button {
+  background-color: #D60201 !important;
+  color: white;
+  border: none !important;
+  transition: all 0.3s ease 0s;
+  display: block !important; /* Hacer que el botón sea un bloque para ocupar el ancho completo */
+  margin: auto auto !important;
+  text-align: center;
+}
+
+.SignIn-Button:hover{
+  background-color: #857c7c !important;
+  color: white;
+  transform: scale(1.1);
+}
+
+.text-danger{
+  font-size: 12px !important;
+}
+
+/* crear proyecto */
+
+.AlumnoForm {
+  padding: 40px 20px 20px 20px !important;
+  height: 700px !important;
+  width: 500px;
+  margin: 20px auto !important;
+}
+
+.proyecto-Button {
+  background-color: #D60201 !important;
+  color: white;
+  border: none !important;
+  transition: all 0.3s ease 0s;
+  display: block !important; /* Hacer que el botón sea un bloque para ocupar el ancho completo */
+  margin: 30px auto !important;
+  text-align: center;
+}
+
+.proyecto-Button:hover{
+  background-color: #D60201 !important;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+
+/* crear usuarios */
+
+.Usuario-container{
+  margin: 50px 100px !important;
+  padding: 0%;
+}
+
+
+/* tabla de usuarios */
+
+.table-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: auto;
+}
+
+.user-table{
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 80%;
+  border: #000000;
+}
+
+.user-table th {
+    color: #ffffff; 
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #000000;
+}
+
+.user.table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #000000;
+}
