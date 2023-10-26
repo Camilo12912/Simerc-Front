@@ -1,75 +1,77 @@
-import React from 'react';
-import { useState } from 'react';
-import { MostrarModal } from './modal'
-import { Container, Row, Col, Form, Button, Card} from 'react-bootstrap';
+import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 
-const RecordatorioForm = ( {onRecordatorioSubmit} ) => {
-    const [titulo, setTitulo] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-    const [showModal, setShowModal] = useState(false);
+    const RecordatorioForm = ({ show, handleClose, onRecordarioSubmit }) => {
+    const [titulo, setTitulo] = useState("");
+    const [descripcion, setDescripcion] = useState("");
+    const [fecha, setFecha] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
-            if (!titulo || !descripcion) {
+        
+        if (!titulo || !descripcion || !fecha) {
             alert('Por favor, complete todos los campos.');
             return;
             }
         
             const recordatorioData = {
-            titulo,
-            descripcion
+                titulo,
+                descripcion,
+                fecha
             };
-        
-            onRecordatorioSubmit(recordatorioData);
+            
+            onRecordarioSubmit(recordatorioData);
+
         
         
 
             setTitulo('');
             setDescripcion('');
-            setShowModal(true);
-        };
-        
-        const closeModal = () => {
-            setShowModal(false);
-        };
+            setFecha('');
+            handleClose();
+    };
 
     return (
-        <section className="correo" id="Correo">
-        <Container fluid>
-            <Row className="justify-content-center">
-            {/* Columna de la Derecha (Recordatorios) */}
-            <Col xs={12} md={6}>
-                <Card border="success" className="text-center bg-dark text-white card-banner mt-5" style={{height:'30rem'}}>
-                <Card.Header>Crear recordatorio</Card.Header>
-                <Card.Body>
-                    <Form className="mb-5" onSubmit={handleSubmit}>
-                    <Form.Group controlId="reminderTitle">
-                        <Form.Control type="text" placeholder="Título" className="mb-5" value={titulo} onChange={(e)=> setTitulo(e.target.value)}/>
-                    </Form.Group>
-                    <Form.Group controlId="reminderDescription">
-                        <Form.Control as="textarea" rows={3} placeholder="Descripción" className="mb-5" value={descripcion} onChange={(e)=> setDescripcion(e.target.value)}/>
-                    </Form.Group>
-                    <Form.Group controlId="reminderDate">
-                        <Form.Control type="datetime-local" className="mb-5"/>
-                    </Form.Group>
-                    <Button variant="danger" type="submit" block>
-                        Crear Recordatorio
-                    </Button>
-                    </Form>
-                </Card.Body>
-                </Card>
-                <MostrarModal
-    show={showModal}
-    onHide={closeModal}
-    title="Recordatorio creado con éxito"
-    content="El recordatorio se creó correctamente."
-    />
-            </Col>
-            </Row>
-        </Container>
-        </section>
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>Crear Recordatorio</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formTitulo">
+                <Form.Label >Título</Form.Label>
+                <Form.Control
+                type="text"
+                placeholder="Ingrese el título"
+                value={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
+                />
+            </Form.Group>
+            <Form.Group controlId="formDescripcion">
+                <Form.Label>Descripción</Form.Label>
+                <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Ingrese la descripción"
+                value={descripcion}
+                onChange={(e) => setDescripcion(e.target.value)}
+                />
+            </Form.Group>
+            <Form.Group controlId="formFecha">
+                <Form.Label>Fecha</Form.Label>
+                <Form.Control
+                type="date"
+                value={fecha}
+                onChange={(e) => setFecha(e.target.value)}
+                />
+            </Form.Group>
+            <Button variant="primary" onClick={handleSubmit} style={{marginTop:"10px"}}>
+                Guardar
+            </Button>
+            </Form>
+        </Modal.Body>
+        </Modal>
     );
-};
+    };
 
 export  {RecordatorioForm}

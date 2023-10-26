@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #ffffff !important;
+  background-color: #ffefef !important;
   color: #000000 !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -51,10 +51,10 @@ input:focus, textarea:focus, select:focus {
 /* nav css */
 
 .navegacion {
-  background-color: #1f2126;
+  background-color: #3c3c3b;
   position: fixed;
   width: 100%;
-  max-height: 90px;
+  max-height: 60px;
   transition:  0.32s ease-in-out;
 }
 
@@ -64,24 +64,23 @@ input:focus, textarea:focus, select:focus {
 
 .navegacion .contNav{
   padding: 0;
-  margin-left: 100px;
+  margin-left: 120px;
   margin-right: 50px;
 }
 
 .navegacion .navbar-brand img{
-  height: 4rem;
-  width: 12rem;
-  padding: 0 !important;
-  margin: 0 !important;
+  height: 8.2rem;
+  width: 9.5rem;
+  padding-top: 35px;
 }
 
 .navegacion .contLink{
-  margin-left: 80px;
+  margin-left: 150px;
 }
 
 
 .navegacion .navbar-nav .nav-link {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ffffff;
   margin: 0px 30px;
   transition: all 0.3s ease 0s;
@@ -102,12 +101,20 @@ input:focus, textarea:focus, select:focus {
   background-repeat: no-repeat;
 }
 
+
 .correo {
   margin-top: 0;
   padding: 0 0 100px 0;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.tablaBanner{
+  width: 35rem ;
+  height: 50rem;
+  margin-top: 5rem;
+  background-color: #D60201;
 }
 
 .banner h1 {
@@ -122,64 +129,6 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-.banner button {
-  color: #ffffff;
-  background-color: #d34040;
-  font-weight: 200;
-  font-size: 15px;
-  padding: 10px 30%;
-  border-radius: 10px;
-  border: none;
-  margin-top: 30px;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease 0s;
-  max-width: 600px;
-}
-
-.banner button:hover {
-  transform: scale(1.1);
-  color: #D60201;
-  background-color: #FFFF;
-}
-
-.banner button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  line-height: 1;
-}
-
-.banner button:hover svg {
-  margin-left: 20px;
-}
-
-.banner img {
-  animation: updown 3s linear infinite;
-}
-
-/* proyectoCard */
-
-.card{
-  margin: 0px 10px;
-  height: 100px;
-}
-
-.card p{
-  margin: 0;
-}
-
-.card .Card.Img{
-  height: 40px;
-  width: 30px;
-}
-
-
-
-.botones-container button {
-  margin: 2px; 
-  padding: 0;
-}
 
 /* proyectos */
 
@@ -196,29 +145,6 @@ input:focus, textarea:focus, select:focus {
   display: block;
 }
 
-/* divisor */
-
-.content-card {
-  background-color: #3F354B !important;
-  margin: 0;
-  padding: 0;
-  border-radius: 0 !important;
-  align-items: center;
-}
-
-.content-card .card-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.content-card h1 {
-  color: #ffffff;
-  font-size: 65px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-}
 
 .img_div {
   padding: 10px;
@@ -234,96 +160,6 @@ input:focus, textarea:focus, select:focus {
   padding: 10px;
 }
 
-/* 2do divisor */
-
-.custom-card {
-  background-color: #D60201 !important;
-  margin: 0;
-  padding: 50px 100px;
-  border-radius: 0 !important;
-}
-
-.custom-card p {
-  color: #ffffff;
-  text-align: center;
-  letter-spacing: 2.1px;
-  opacity: 1;
-}
-
-/* projectSection */
-
-.bannerProject {
-  margin-top: 0;
-  padding: 70px 100px 20px 100px;
-  background-position: top center;
-}
-
-.bannerProject .logo_user svg{
-  height: 160px;
-  width: 160px;
-  margin-bottom: 40px;
-  margin-left: 30px;
-  color: #D60201;
-}
-
-.bannerProject h5{
-  color: #3f354b;
-  font-weight: 700;
-  letter-spacing: 6px;
-}
-
-.bannerProject h1 {
-  color: #D60201;
-  font-size: 70px;
-  font-weight: 750;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  display: block;
-  margin-bottom: 500px !important;
-}
-
-
-
-.bannerProject button {
-  color: #fff;
-  background-color: #D60201;
-  font-weight: 200;
-  font-size: 15px;
-  padding: 12px;
-  border-radius: 100px;
-  border: none;
-  margin-top: 50px;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease 0s;
-}
-
-.bannerProject button:hover {
-  transform: scale(1.1);
-  color: #D60201;
-  background-color: #FFFF;
-}
-
-.bannerProject button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  line-height: 1;
-}
-
-.bannerProject button:hover svg {
-  margin-left: 20px;
-}
-
-.ProyectoImage{
-  margin: 0;
-  padding: 0;
-}
-
-.ProyectoImage img {
-  height: 700px;
-  max-width: 100%;
-}
 
 .bannerProject.text-right .row {
   flex-direction: row-reverse;
@@ -346,7 +182,7 @@ input:focus, textarea:focus, select:focus {
 /* footer */
 
 .footer {
-  background-color: #1f2126;
+  background-color: #3c3c3b;
   color: #fff;
   padding: 30px 0 0;
 }
@@ -483,6 +319,8 @@ input:focus, textarea:focus, select:focus {
   width: 500px;
   margin: 20px auto !important;
 }
+
+
 
 .proyecto-Button {
   background-color: #D60201 !important;

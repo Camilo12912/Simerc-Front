@@ -1,4 +1,4 @@
-import { SignInForm } from "../components/SignInForm"
+import { SignInForm } from "../components/LoginForm"
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';

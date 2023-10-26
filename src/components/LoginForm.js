@@ -49,7 +49,7 @@ function SignInForm({ onSignIn }) {
 
     if (Object.keys(newErrors).length === 0) {
       onSignIn();
-      navigate('/homepage');
+      navigate('/CrearRecordatorio');
       console.log('Inicio de sesión exitoso');
     } else {
       setErrors(newErrors);
@@ -70,7 +70,6 @@ function SignInForm({ onSignIn }) {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter email"
         />
         {errors.email && <span className="text-danger">{errors.email}</span>}
       </Form.Group>
@@ -82,13 +81,12 @@ function SignInForm({ onSignIn }) {
           name="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="Password"
         />
         {errors.password && <span className="text-danger">{errors.password}</span>}
       </Form.Group>
 
       <Button className="SignIn-Button" onClick={handleSubmit} > <Link to="/"></Link>
-        Iniciar Sesion
+        Ingresar
       </Button>
     </Form>
     <MostrarModal

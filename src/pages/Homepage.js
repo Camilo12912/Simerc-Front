@@ -1,9 +1,8 @@
-import { Banner } from '../components/banner';
 
 const Homepage= ({recordatorio}) => {
     return(
         <div>
-        <Banner recordatorio={recordatorio}/>
+        {/* <Banner recordatorio={recordatorio}/> */}
         </div>
     )
 }

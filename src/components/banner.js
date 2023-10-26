@@ -1,63 +1,41 @@
 import React from "react";
-import { Container, Row, Col, Button, Card, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-// import fesc from "../assets/img/fescp.png";
+import { Container, Row, Col, Card, Table, Button } from "react-bootstrap";
 
 function Banner ({recordatorio}) {
+
+
   return (
     <section className="banner" id="home" >
       <Container margin="0" padding="0" >
         <Row className="align-items-center" >
-          <Col xs={10} md={6} xl={7}>
-            <div >
-              <h1>BIENVENIDO</h1>
-            </div>
-            <div className="d-grid buttom-banner">
-      <Link to="/RegistrarAlumno" style={{ textDecoration: 'none' }}>
-      <Button variant="primary" size="lg" style={{width:'100%'}}>
-        Registrar Alumno
-      </Button>
-      </Link>
-      <Link  style={{ textDecoration: 'none' }}>
-      <Button variant="primary" size="lg" style={{width:'100%'}}>
-        Registrar Asesor
-      </Button>
-      </Link>
-      <Link to="/PanelCorreo" style={{ textDecoration: 'none' }}>
-      <Button variant="primary" size="lg" style={{width:'100%'}}>
-        Enviar Correos
-      </Button>
-      </Link>
-      <Link to="/CrearRecordatorio" style={{ textDecoration: 'none' }}>
-      <Button variant="primary" size="lg" style={{width:'100%'}}>
-        Recordatorios
-      </Button>
-      </Link>
-    </div>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-          <Card border="success" className="text-center bg-dark text-white card-banner" style={{ width: '35rem', height:'35rem', marginTop:'5rem'}} >
-        <Card.Header>RECORDATORIOS</Card.Header>
+            {/* <div >
+              <center><h1 style={{paddingTop:'3rem'}}>BIENVENIDO</h1></center>
+            </div> */}
+          <div className="d-flex align-items-center justify-content-center">
+          <Card border="success" className="text-center bg-dark text-white  card-banner " style={{marginTop:'1rem', width:'50rem', height:'30rem'}}>
+        <Card.Header style={{fontSize:'25px'}}>RECORDATORIOS</Card.Header>
         <Card.Body>
-          <Table striped bordered hover>
+          <Table striped bordered hover variant="danger">
       <thead>
         <tr>
           <th>Titulo</th>
           <th>Descripcion</th>
+          <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
         {recordatorio.map((recordatorio)=>(
         <tr>
           <td>{recordatorio.titulo}</td>
-          <td>{recordatorio.descripcion}</td>
+          <td style={{ whiteSpace: 'pre-wrap', padding: '1rem 0' }}>{recordatorio.descripcion}</td>
+          <td>{recordatorio.fecha}</td>
         </tr>
         ))}
       </tbody>
     </Table>
         </Card.Body>
       </Card>
-          </Col>
+      </div>
         </Row>
       </Container>
     </section>

@@ -1,48 +1,59 @@
-import { MostrarModal } from "./modal"
-import { Button, Container, Row, Col, Card, Table } from "react-bootstrap"
-import { useState } from "react";
-import { Form } from "react-bootstrap";
-import { BsFillPlusCircleFill } from "react-icons/bs";
+import React, { useState } from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-const UsuarioFormulario = ({ onUserSubmit }) => {
+const Correo = () => {
+  const [para, setPara] = useState('');
+  const [asunto, setAsunto] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showModal, setShowModal] = useState(false);
-
-
+  const handleEnviarCorreo = () => {
+    // Lógica para enviar el correo
+    console.log('Correo enviado:', { para, asunto, mensaje });
+  };
 
   return (
-    
-    <section className="CardCorreo" id="home" >
-      {/* <Container margin="0" padding="0" style={{marginLeft:'60%'}}>
-        <Row className="CardCorreo" >
-          <Col xs={12} md={6} xl={7} >
-          <Card border="success" className="text-center bg-dark text-white card-banner" style={{ width: '35rem', height:'35rem', marginTop:'5rem'}} >
-        <Card.Header>RECORDATORIOS</Card.Header>
-        <Card.Body>
-          <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Titulo</th>
-          <th>Descripcion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Llamada</td>
-          <td>Llamar a la rectora</td>
-        </tr>
-      </tbody>
-    </Table>
-        </Card.Body>
-      </Card>
-          </Col>
-        </Row>
-      </Container> */}
-    </section>
+    <Container className="mt-5">
+      <Row>
+        <Col md={12}>
+          <h1>Redactar Correo</h1>
+        </Col>
+      </Row>
+      <Row className="mt-3">
+        <Col md={12}>
+          <Form>
+            <Form.Group controlId="para">
+              <Form.Label>Para:</Form.Label>
+              <Form.Select
+                    aria-label="Tipo"
+                  >
+                    <option value="">Carrera:</option>
+                    <option value="">Todos</option>
+                    <option value="">Ingeniera de Software</option>
+                    <option value="">Diseño Grafico</option>
+                    <option value="">Financiera</option>
+                    
+                  </Form.Select>
+            </Form.Group>
+
+            <Form.Group controlId="asunto" className="mt-3">
+              <Form.Label>Asunto:</Form.Label>
+              <Form.Control type="text" placeholder="Asunto del correo" value={asunto} onChange={(e) => setAsunto(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="mensaje" className="mt-3">
+              <Form.Label>Mensaje:</Form.Label>
+              <Form.Control as="textarea" rows={6} value={mensaje} onChange={(e) => setMensaje(e.target.value)} />
+            </Form.Group>
+
+            <Button variant="primary" className="mt-3" onClick={handleEnviarCorreo}>
+              Enviar Correo
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
-export { UsuarioFormulario }
+export {Correo}
+
