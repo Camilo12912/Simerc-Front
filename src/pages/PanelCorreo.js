@@ -1,19 +1,17 @@
 
-import { Correo } from "../components/EnviarCorreo.js";
-import { Card } from "react-bootstrap";
+import EnviarCorreo, { Correo } from "../components/EnviarCorreo.js";
+import { Card, Container } from "react-bootstrap";
 const PanelCorreo=({})=>{
 
 
   return (
-
-    <Card className="mx-auto bg-dark text-white w-75 my-5">
+    <Container className="mt-4 !important" style={{paddingTop:'100px'}}>
+    <Card className="mx-auto  w-75 my-5 mt-5" >
       <Card.Body>
-        <div className="Usuario-container">
-          <Correo />
-        </div>
+          <EnviarCorreo />
       </Card.Body>
     </Card>
-
+    </Container>
   );
 }
 

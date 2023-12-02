@@ -1,22 +1,46 @@
-import { SignInForm } from "../components/LoginForm"
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import loginf from "../assets/img/loginf.png"
+import { SignInForm } from "../components/LoginForm.js"
+import { Card, Col, Image, Row } from 'react-bootstrap';
+import imageLogin from "../assets/img/loginm (1).png"
+import { useState } from "react"; 
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { autenticacion } from "../connections/usuarioAcciones";
+import Swal from "sweetalert2";
 
-function SignIn ({onSignIn}) {
+function SignIn () {
+
+    const [errores, setErrores]= useState({});
+    const navegar=useNavigate();
+    const enviarAccion= useDispatch();
+
+    const login = ({username, password})=>{
+
+        const error={};
+        setErrores(error);
+
+        enviarAccion(autenticacion({username, password}))
+        .then(respuesta =>{
+            navegar("/Recordatorios")
+        })
+        .catch(err=>{        
+            Swal.fire({
+                title: "Error",
+                text: "No se ha podido iniciar sesion",
+                icon: "error"
+              });            
+        })
+    }
 
     return(
-        <Card className="loginCard border-danger bg-dark text-white">
+        <Card className="loginCard">
         <Row>
-            <Col xs={4} md={6} xl={6}>
-                <Image src={loginf} rounded className="imagen-login" />
+            <Col xs={6} md={6} xl={6}>
+                <Image src={imageLogin} rounded className="imagen-login" />
             </Col>
             <Col xs={6} md={5} xl={5}>
             <Card.Body>
-                <h1 style={{textAlign: "center", marginBottom:"2rem"}} >Iniciar Sesión</h1><br/>
-                <SignInForm onSignIn={onSignIn} />
+                <h1 style={{textAlign: "center"}} >Login</h1><br/>
+                <SignInForm errores={errores} callback={login} />
             </Card.Body>
             </Col>
         </Row>
@@ -25,3 +49,5 @@ function SignIn ({onSignIn}) {
 }
 
 export {SignIn}
+
+
